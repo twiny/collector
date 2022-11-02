@@ -8,10 +8,10 @@ import (
 	"time"
 
 	//
-	"collector/pkg/collector/v1"
-	"collector/pkg/config"
-	"collector/service/badgerdb"
-	"collector/service/localstore"
+	"github.com/twiny/collector/pkg/collector/v1"
+	"github.com/twiny/collector/pkg/config"
+	"github.com/twiny/collector/service/badgerdb"
+	"github.com/twiny/collector/service/localstore"
 
 	//
 	"github.com/twiny/wbot"

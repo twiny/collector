@@ -4,7 +4,7 @@ import (
 	"context"
 
 	//
-	"collector/pkg/collector/v1"
+	"github.com/twiny/collector/pkg/collector/v1"
 )
 
 // BadgerDB

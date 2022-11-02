@@ -1,4 +1,4 @@
-module collector
+module github.com/twiny/collector
 
 go 1.19
 

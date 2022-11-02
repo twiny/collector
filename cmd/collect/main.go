@@ -1,8 +1,9 @@
 package main
 
 import (
-	"collector/pkg/config"
 	"fmt"
+
+	"github.com/twiny/collector/pkg/config"
 )
 
 // here we go!
