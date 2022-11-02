@@ -38,6 +38,7 @@ func NewAPI(cf string) (*API, error) {
 	opts := []wbot.Option{
 		wbot.SetMaxDepth(cnf.MaxDepth),
 		wbot.SetParallel(cnf.Workers),
+		wbot.SetRateLimit(cnf.RateLimit.Rate, cnf.RateLimit.Interval),
 	}
 
 	if cnf.URLFilter != "" {

@@ -1,0 +1,13 @@
+starturl: https://www.onedoc.ch/en/physiotherapist/switzerland
+urlfilter: ^(?:https?://)?(?:[^/.\s]+\.)*https://www.onedoc.ch/en/physiotherapist
+workers: 10
+max_depth: 10
+user_agents:
+    - Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+proxies:
+    - localhost:9991
+    - localhost:9992
+rate_limit: "10/1s"
+storage:
+    db: ./tmp/db
+    html: ./tmp/html

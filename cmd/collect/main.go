@@ -1,8 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"collector/pkg/config"
+	"fmt"
+)
 
 // here we go!
 func main() {
-	fmt.Println("Hello World!")
+	c, err := config.ParseConfig("config/config.yaml")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	fmt.Printf("%+v\n", c)
 }
