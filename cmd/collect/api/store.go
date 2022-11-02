@@ -9,6 +9,6 @@ import (
 
 // Store
 type Store interface {
-	StoreData(ctx context.Context, d *collector.Details) error
+	StoreDetails(ctx context.Context, d *collector.Details) error
 	Close() error
 }

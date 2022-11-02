@@ -17,10 +17,13 @@ func NewBadgerDB(dir string) (*BadgerDB, error) {
 	return nil, nil
 }
 
-func (b *BadgerDB) StoreData(ctx context.Context, d *collector.Details) error {
+// StoreDetails
+func (b *BadgerDB) StoreDetails(ctx context.Context, d *collector.Details) error {
 	//
 	return nil
 }
+
+// Close
 func (b *BadgerDB) Close() error {
 	//
 	return nil
