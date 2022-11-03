@@ -1,18 +1,42 @@
 package main
 
 import (
-	"fmt"
+	"log"
+	"os"
 
-	"github.com/twiny/collector/pkg/config"
+	"github.com/twiny/collector/cmd/collect/api"
+	"github.com/urfave/cli/v2"
 )
 
 // here we go!
 func main() {
-	c, err := config.ParseConfig("config/config.yaml")
-	if err != nil {
-		fmt.Println(err)
-		return
+	app := &cli.App{
+		Name:     "Collector",
+		HelpName: "collector",
+		Usage:    "Website scraper ",
+		Version:  "dev-v0.0.0",
+		Flags: []cli.Flag{
+			&cli.StringFlag{
+				Name:     "config",
+				Aliases:  []string{"c"},
+				Usage:    "`path` to config file",
+				Required: false,
+				Value:    "./config/config.yaml",
+			},
+		},
+		Action: func(c *cli.Context) error {
+			col, err := api.NewAPI(c.String("config"))
+			if err != nil {
+				return err
+			}
+			go col.Close()
+
+			return col.Collect()
+		},
 	}
 
-	fmt.Printf("%+v\n", c)
+	if err := app.Run(os.Args); err != nil {
+		log.Println(err)
+		return
+	}
 }
